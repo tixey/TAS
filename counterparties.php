@@ -32,14 +32,19 @@
             const mainLayout = {
                 name: 'mainLayout'
             }
-            const topMenu = {
-                name: 'loginForm',
-                params: { SelectedIndex:0 }
+            const mainMenu = {
+                name: 'mainMenu',
+                params: {SelectedIndex: 4}
             }
+            const counterPartiesGrid = {
+                name: 'counterPartiesGrid'
+            }
+            const loadStores = () => Stores.load([{name:'counterPartiesGrid'},{name:'counterPartiesTypes'}])
             const loadMainLayout = () => Components.load([mainLayout])
-            const loadTopForm = () => Components.load([topMenu])
+            const loadComponents = () => Components.load([mainMenu,counterPartiesGrid])
             loadMainLayout()
-                .then(loadTopForm)
+                .then(loadStores)
+                .then(loadComponents)
         }
         Config.loadEngineScripts().then(loadTool)
     </script>
