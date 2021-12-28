@@ -1,3 +1,39 @@
 #mainArea{
     padding-top: 25px;
 }
+
+ 
+
+
+#dropZone {
+    border: 1px dashed darkgray;
+    padding: 15px 15px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: #f1f1f1;
+}
+
+.fileTag {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 2px 5px;
+    background-color: white;
+    margin: 0px 5px 5px 0px;
+}
+
+.closeFileTag {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0px 0px 0px 5px;
+    background-color: #d9534f;
+    padding: 0px 5px;
+    color: white !important;;
+}
+
+.existinhFileTag{
+    display: inline-block;
+    border: 1px solid darkgray;
+    padding: 2px 5px;
+    background-color: #e6f7ff;
+    margin: 0px 5px 5px 0px;
+}

@@ -23,6 +23,11 @@ export function getComponent (id, params = {}) {
         },
         allowColumnResizing: true,
         showBorders: true,
+        export: {
+            enabled: true,
+            allowExportSelectedData: true,
+            fileName: 'TaonInvoices.xlsx'
+        },
         editing: {
             mode: 'popup',
             allowUpdating: true,
@@ -96,9 +101,9 @@ export function getComponent (id, params = {}) {
                             editorType: 'dxTextArea',
                             colSpan: 4,
                             editorOptions: {
-                                height: 150,
+                                height: 250,
                             },
-                        },
+                        }
                 ]
                 
             }

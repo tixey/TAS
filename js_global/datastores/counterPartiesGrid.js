@@ -14,7 +14,7 @@ export function getStoreSettings (params = {}) {
                 pADDRESS: (values.ADDRESS  == undefined)?'':values.ADDRESS,
                 pROLE_ID: (values.ROLE_ID  == undefined)?'':values.ROLE_ID
             }
-            Helper.postJson('004', d).then(data => {
+            return Helper.postJson('004', d).then(data => {
 
                 if(data.length != 1 || data[0].RESULT != 200){
                     Helper.notify({
@@ -24,7 +24,7 @@ export function getStoreSettings (params = {}) {
                             at: "center bottom"
                         }
                     }, "error", 3000)
-                    return
+                    return Promise.reject(new Error("Unable to add invoice!"))
                 }
 
                 Helper.notify({
@@ -34,12 +34,13 @@ export function getStoreSettings (params = {}) {
                         at: "center bottom"
                     }
                 }, "success", 3000)
+                return Promise.resolve(true)
                 
 
             })
         },
         update: (key, values) => {
-         console.log(key, values)
+         
             let d = {
                 pID: key,
                 pNAME: (values.NAME == undefined)?null:values.NAME,
@@ -51,7 +52,7 @@ export function getStoreSettings (params = {}) {
                 pADDRESS: (values.ADDRESS  == undefined)?null:values.ADDRESS,
                 pROLE_ID: (values.ROLE_ID  == undefined)?null:values.ROLE_ID
             }
-            Helper.postJson('006', d).then(data => {
+            return Helper.postJson('006', d).then(data => {
 
                 if(data.length != 1 || data[0].RESULT != 200){
                     Helper.notify({
@@ -61,7 +62,7 @@ export function getStoreSettings (params = {}) {
                             at: "center bottom"
                         }
                     }, "error", 3000)
-                    return
+                    return Promise.reject(new Error("Unable to add invoice!"))
                 }
 
                 Helper.notify({
@@ -71,13 +72,14 @@ export function getStoreSettings (params = {}) {
                         at: "center bottom"
                     }
                 }, "success", 3000)
+                return Promise.resolve(true)
                 
 
             })
         },
         remove: (key) => {
             console.log
-            Helper.postJson('005', {pID: key}).then(data => {
+            return Helper.postJson('005', {pID: key}).then(data => {
 
                 if(data.length != 1 || data[0].RESULT != 200){
                     Helper.notify({
@@ -87,7 +89,7 @@ export function getStoreSettings (params = {}) {
                             at: "center bottom"
                         }
                     }, "error", 3000)
-                    return
+                    return Promise.reject(new Error("Unable to add invoice!"))
                 }
 
                 Helper.notify({
@@ -97,6 +99,7 @@ export function getStoreSettings (params = {}) {
                         at: "center bottom"
                     }
                 }, "success", 3000)
+                return Promise.resolve(true)
                 
 
             })

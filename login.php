@@ -30,7 +30,7 @@
         const loadTool = () => { 
 
             const mainLayout = {
-                name: 'mainLayout'
+                name: 'loginLayout'
             }
             const topMenu = {
                 name: 'loginForm',

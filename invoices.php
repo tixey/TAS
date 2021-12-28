@@ -13,6 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- External -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js" integrity="sha512-xQBQYt9UcgblF6aCMrwU1NkVA7HCXaSN2oq0so80KO+y68M+n64FOcqgav4igHe6D5ObBLIf68DWv+gfBowczg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.10.1/polyfill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/3.8.0/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="js/jquery.min.js"%3E%3C/script%3E'))</script>
 
@@ -39,7 +44,7 @@
             const invoicesGrid = {
                 name: 'invoicesGrid'
             }
-            const loadStores = () => Stores.load([{name:'invoicesGrid'},{name:'counterPartiesTypes'}])
+            const loadStores = () => Stores.load([{name:'currencies'},{name:'counterPartiesGrid'},{name:'invoicesGrid'}])
             const loadMainLayout = () => Components.load([mainLayout])
             const loadComponents = () => Components.load([mainMenu,invoicesGrid])
             loadMainLayout()
